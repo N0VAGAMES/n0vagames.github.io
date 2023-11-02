@@ -14,25 +14,6 @@
   <button onclick="window.location.href = 'https://wshoobi.github.io/proxyhub';">Proxy Hub</button>
   <button onclick="window.location.href = 'https://wshoobi.github.io/gamehub';">Game Hub</button>
   <button onclick="window.location.href = 'https://bit.ly/shoobi';">Original Shoobi</button>
-  <script>
-  // Retrieve visitor counts from the server using a PHP script
-  fetch('visitor_counts.php')
-    .then(response => response.json())
-    .then(data => {
-      var visitorsToday = data.today;
-      var visitorsThisWeek = data.thisWeek;
-      var visitorsThisMonth = data.thisMonth;
-
-      // Render the visitor counts
-      document.write("<div style='background-color: transparent; color: white; font-family: "Montserrat", sans-serif;'>");
-      document.write("<h4>Visitor Count</h4>");
-      document.write("<p>Today: " + visitorsToday + " visitors</p>");
-      document.write("<p>This Week: " + visitorsThisWeek + " visitors</p>");
-      document.write("<p>This Month: " + visitorsThisMonth + " visitors</p>");
-      document.write("</div>");
-    })
-    .catch(error => console.log(error));
-</script>
   <script src="script.js"></script>
 </body>
 
