@@ -1,1 +1,1 @@
-error
+<header><img src="images/shoobi.png" /></header>
