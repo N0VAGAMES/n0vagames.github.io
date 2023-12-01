@@ -1,5 +1,5 @@
         function create() {
-            var url = "https://wshoobi.github.io/";
+            var url = "https://n0vagames.github.io/";
             var win = window.open();
             win.document.body.style.margin = '0';
             win.document.body.style.height = '100vh';
