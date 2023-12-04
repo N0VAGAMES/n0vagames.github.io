@@ -9,6 +9,40 @@
   <style>
     body {
       background-color: black;
+      height: 2000px; /* Added height for parallax effect */
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .parallax-section {
+      height: 500px;
+      position: relative;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      overflow: hidden;
+    }
+
+    .parallax-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: white;
+    }
+
+    .parallax-section1 {
+      background-image: url('image1.jpg');
+    }
+
+    .parallax-section2 {
+      background-image: url('image2.jpg');
+    }
+
+    .parallax-section3 {
+      background-image: url('image3.jpg');
     }
 
     button {
@@ -20,7 +54,7 @@
       transition: all 0.25s ease;
       border-radius: 20px;
       font-size: 30px;
-      margin-right: 16px
+      margin-right: 16px;
     }
 
     button:hover {
@@ -29,18 +63,43 @@
   </style>
 </head>
 <body>
-  <center>
-  <header><img src="images/novalogo.png"/></header>
-  <header><img src="images/gamingredefined.png" /></header>
-  <button onclick="window.location.href = 'https://n0vagames.github.io/gamehub/';">Play</button>
-  <button onclick="window.location.href = 'https://n0vagames.github.io/proxyhub/';">Proxies</button>
-  <button onclick="window.location.href = 'websites.html';">More Websites</button>
-  <br/>
-  <br/>
-  <br/>
-  <button onclick="create()">Open in about:blank</button>
-  </center>
+  <div class="parallax-section parallax-section1">
+    <div class="parallax-content">
+      <center>
+        <header><img src="images/novalogo.png"/></header>
+        <header><img src="images/gamingredefined.png" /></header>
+        <button onclick="window.location.href = 'https://n0vagames.github.io/gamehub/';">Play</button>
+        <button onclick="window.location.href = 'https://n0vagames.github.io/proxyhub/';">Proxies</button>
+        <button onclick="window.location.href = 'websites.html';">More Websites</button>
+        <br/>
+        <br/>
+        <br/>
+        <button onclick="create()">Open in about:blank</button>
+      </center>
+    </div>
+  </div>
+  
+  <div class="parallax-section parallax-section2"></div>
+  
+  <div class="parallax-section parallax-section3"></div>
+
   <script src="script.js"></script>
   <script src="esc.js"></script>
+  <script>
+    // CSS Animations for Parallax Effect
+    var parallaxSections = document.querySelectorAll('.parallax-section');
+    var sectionOffsets = Array.from(parallaxSections).map(function(section) {
+      return section.offsetTop;
+    });
+
+    function updateParallax() {
+      parallaxSections.forEach(function(section, index) {
+        var scrolled = window.pageYOffset;
+        section.style.backgroundPositionY = (sectionOffsets[index] - scrolled) * 0.5 + 'px';
+      });
+    }
+
+    window.addEventListener('scroll', updateParallax);
+  </script>
 </body>
 </html>
