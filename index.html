@@ -6,61 +6,6 @@
   <meta name="viewport" content="width=device-width">
   <title>Nova</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
-  <style>
-    body {
-      background-color: black;
-      height: 2000px; /* Added height for parallax effect */
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .parallax-section {
-      height: 500px;
-      position: relative;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      overflow: hidden;
-    }
-
-    .parallax-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-      color: white;
-    }
-
-    .parallax-section1 {
-      background-image: url('image1.jpg');
-    }
-
-    .parallax-section2 {
-      background-image: url('image2.jpg');
-    }
-
-    .parallax-section3 {
-      background-image: url('image3.jpg');
-    }
-
-    button {
-      background-color: white;
-      color: black;
-      padding: 10px 20px;
-      border: none;
-      cursor: pointer;
-      transition: all 0.25s ease;
-      border-radius: 20px;
-      font-size: 30px;
-      margin-right: 16px;
-    }
-
-    button:hover {
-      transform: scale(1.1);
-    }
-  </style>
 </head>
 <body>
   <div class="parallax-section parallax-section1">
@@ -78,28 +23,7 @@
       </center>
     </div>
   </div>
-  
-  <div class="parallax-section parallax-section2"></div>
-  
-  <div class="parallax-section parallax-section3"></div>
-
   <script src="script.js"></script>
   <script src="esc.js"></script>
-  <style>
-    // CSS Animations for Parallax Effect
-    var parallaxSections = document.querySelectorAll('.parallax-section');
-    var sectionOffsets = Array.from(parallaxSections).map(function(section) {
-      return section.offsetTop;
-    });
-
-    function updateParallax() {
-      parallaxSections.forEach(function(section, index) {
-        var scrolled = window.pageYOffset;
-        section.style.backgroundPositionY = (sectionOffsets[index] - scrolled) * 0.5 + 'px';
-      });
-    }
-
-    window.addEventListener('scroll', updateParallax);
-  </style>
 </body>
 </html>
