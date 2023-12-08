@@ -1,0 +1,9 @@
+<input type="text" onkeyup="setTitle(this.value)" placeholder="Enter title here">
+<script>
+    function setTitle(title = "") {
+    if (title) {
+    localStorage.setItem("goofyahh", title);
+    document.title = localStorage.getItem("goofyahh");
+    }
+    }  
+</script>
